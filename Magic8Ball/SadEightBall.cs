@@ -8,13 +8,22 @@ namespace Magic8Ball
 {
     public class SadEightBall : IQuestionable
     {
-        static List<string> sadAnswers = new List<string>();
+        public List<string> sadAnswers = new List<string>();
 
-        public void Answer()
+        /***********************************************
+         * Answer()
+         *      Called by Program.cs to show the answer
+        ***********************************************/
+        public string Answer()
         {
-            ShowAnswer();
+            return ShowAnswer();
         }
 
+        /******************************************
+         * GenerateAnswers()
+         *      Adds 3 negative, 3 positive, and 
+         *      3 neutral answers to a list
+        ******************************************/
         public void GenerateAnswers()
         {
             //Add negative responses
@@ -33,13 +42,17 @@ namespace Magic8Ball
             sadAnswers.Add("Really though, does it matter?");
         }
 
-        public void ShowAnswer()
+        /*********************************************
+         * ShowAnswer()
+         *      Returns a random answer from the list
+        *********************************************/
+        public string ShowAnswer()
         {
             Random rng = new Random();
             int index = rng.Next(sadAnswers.Count());
 
-            Console.WriteLine("Good morning. If it is a good morning, which I doubt...");
-            Console.WriteLine(sadAnswers[index]);
+            return "Good morning. If it is a good morning, which I doubt..." + 
+                $"{sadAnswers[index]}";
         }
     }
 }

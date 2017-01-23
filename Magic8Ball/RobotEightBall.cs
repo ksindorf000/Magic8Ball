@@ -8,13 +8,22 @@ namespace Magic8Ball
 {
     public class RobotEightBall : IQuestionable
     {
-        static List<string> robotAnswers = new List<string>();
+        public List<string> robotAnswers = new List<string>();
 
-        public void Answer()
+        /***********************************************
+         * Answer()
+         *      Called by Program.cs to show the answer
+        ***********************************************/
+        public string Answer()
         {
-            ShowAnswer();
+            return ShowAnswer();
         }
 
+        /******************************************
+         * GenerateAnswers()
+         *      Adds 3 negative, 3 positive, and 
+         *      3 neutral answers to a list
+        ******************************************/
         public void GenerateAnswers()
         {
             //Add negative responses
@@ -32,13 +41,16 @@ namespace Magic8Ball
             robotAnswers.Add("A 50 percent chance has been determined.");
         }
 
-        public void ShowAnswer()
+        /*********************************************
+         * ShowAnswer()
+         *      Returns a random answer from the list
+        *********************************************/
+        public string ShowAnswer()
         {
             Random rng = new Random();
             int index = rng.Next(robotAnswers.Count());
-            
-            Console.WriteLine("Computing... Computing...");
-            Console.WriteLine(robotAnswers[index]);
+
+            return "Computing... Computing... \n "+ $"{robotAnswers[index]}";
         }
 
     }

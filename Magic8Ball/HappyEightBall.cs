@@ -8,13 +8,22 @@ namespace Magic8Ball
 {
     public class HappyEightBall : IQuestionable
     {
-        static List<string> happyAnswers = new List<string>();
+        public List<string> happyAnswers = new List<string>();
 
-        public void Answer()
+        /***********************************************
+         * Answer()
+         *      Called by Program.cs to show the answer
+        ***********************************************/
+        public string Answer()
         {
-            ShowAnswer();
+            return ShowAnswer();
         }
 
+        /******************************************
+         * GenerateAnswers()
+         *      Adds 3 negative, 3 positive, and 
+         *      3 neutral answers to a list
+        ******************************************/
         public void GenerateAnswers()
         {
             //Add negative responses
@@ -37,13 +46,16 @@ namespace Magic8Ball
                 "but keep your fingers crossed!");
         }
 
-        public void ShowAnswer()
+        /*********************************************
+         * ShowAnswer()
+         *      Returns a random answer from the list
+        *********************************************/
+        public string ShowAnswer()
         {
             Random rng = new Random();
             int index = rng.Next(happyAnswers.Count());
 
-            Console.WriteLine("Well hello there! Let me see now...");
-            Console.WriteLine(happyAnswers[index]);
+            return "Well hello there! Let me see now... \n " + $"{happyAnswers[index]}";
         }
 
     }

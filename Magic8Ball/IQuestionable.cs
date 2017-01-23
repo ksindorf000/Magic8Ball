@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Magic8Ball
 {
-    public class IQuestionable
+    interface IQuestionable
     {
-        void Answer();
+        ShowAnswer();
     }
 }

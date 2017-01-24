@@ -8,6 +8,6 @@ namespace Magic8Ball
 {
     interface IQuestionable
     {
-        string ShowAnswer();
+        string Answer();
     }
 }

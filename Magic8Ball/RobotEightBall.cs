@@ -19,12 +19,28 @@ namespace Magic8Ball
             return ShowAnswer();
         }
 
+
+        /*********************************************
+         * ShowAnswer()
+         *      Returns a random answer from the list
+        *********************************************/
+        public string ShowAnswer()
+        {
+            GenerateAnswers();
+
+            Random rng = new Random();
+            int index = rng.Next(robotAnswers.Count());
+
+            return "Computing... Computing... \n " + 
+                $"{robotAnswers[index]}";
+        }
+
         /******************************************
          * GenerateAnswers()
          *      Adds 3 negative, 3 positive, and 
          *      3 neutral answers to a list
         ******************************************/
-        public void GenerateAnswers()
+        private void GenerateAnswers()
         {
             //Add negative responses
             robotAnswers.Add("Negative.");
@@ -40,18 +56,5 @@ namespace Magic8Ball
             robotAnswers.Add("The odds are 50/50.");
             robotAnswers.Add("A 50 percent chance has been determined.");
         }
-
-        /*********************************************
-         * ShowAnswer()
-         *      Returns a random answer from the list
-        *********************************************/
-        public string ShowAnswer()
-        {
-            Random rng = new Random();
-            int index = rng.Next(robotAnswers.Count());
-
-            return "Computing... Computing... \n "+ $"{robotAnswers[index]}";
-        }
-
     }
 }

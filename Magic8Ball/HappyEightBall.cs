@@ -19,15 +19,31 @@ namespace Magic8Ball
             return ShowAnswer();
         }
 
+        /*********************************************
+         * ShowAnswer()
+         *      Returns a random answer from the list
+        *********************************************/
+        public string ShowAnswer()
+        {
+            GenerateAnswers();
+
+            Random rng = new Random();
+            int index = rng.Next(happyAnswers.Count());
+
+            return "Well hello there! Let me see now... \n " +
+                $"{happyAnswers[index]}";
+        }
+
+
         /******************************************
          * GenerateAnswers()
          *      Adds 3 negative, 3 positive, and 
          *      3 neutral answers to a list
         ******************************************/
-        public void GenerateAnswers()
+        private void GenerateAnswers()
         {
             //Add negative responses
-            happyAnswers.Add("Sorry, I don't think so. " + 
+            happyAnswers.Add("Sorry, I don't think so. " +
                 "But cheer up! You'll get some good news today!");
             happyAnswers.Add("No, I'm afraid not. " +
                 "But I see a lucky streak headed your way!");
@@ -42,20 +58,8 @@ namespace Magic8Ball
             //Add neutral responses
             happyAnswers.Add("If you were asking if the glass is half empty, " +
                 "I'd say it's half-full.");
-            happyAnswers.Add("I can't tell you that... " + 
+            happyAnswers.Add("I can't tell you that... " +
                 "but keep your fingers crossed!");
-        }
-
-        /*********************************************
-         * ShowAnswer()
-         *      Returns a random answer from the list
-        *********************************************/
-        public string ShowAnswer()
-        {
-            Random rng = new Random();
-            int index = rng.Next(happyAnswers.Count());
-
-            return "Well hello there! Let me see now... \n " + $"{happyAnswers[index]}";
         }
 
     }

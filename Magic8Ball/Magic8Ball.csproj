@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="HappyEightBall.cs" />
     <Compile Include="IQuestionable.cs" />
+    <Compile Include="PlayGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RobotEightBall.cs" />

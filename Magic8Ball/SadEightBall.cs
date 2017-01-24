@@ -19,6 +19,21 @@ namespace Magic8Ball
             return ShowAnswer();
         }
 
+        /*********************************************
+         * ShowAnswer()
+         *      Returns a random answer from the list
+        *********************************************/
+        public string ShowAnswer()
+        {
+            GenerateAnswers();
+
+            Random rng = new Random();
+            int index = rng.Next(sadAnswers.Count());
+
+            return "Oh yippee... another question... \n" +
+                $"{sadAnswers[index]}";
+        }
+
         /******************************************
          * GenerateAnswers()
          *      Adds 3 negative, 3 positive, and 
@@ -40,19 +55,6 @@ namespace Magic8Ball
             //Add neutral responses
             sadAnswers.Add("Maybe yes, maybe no. Who knows, really?");
             sadAnswers.Add("Really though, does it matter?");
-        }
-
-        /*********************************************
-         * ShowAnswer()
-         *      Returns a random answer from the list
-        *********************************************/
-        public string ShowAnswer()
-        {
-            Random rng = new Random();
-            int index = rng.Next(sadAnswers.Count());
-
-            return "Good morning. If it is a good morning, which I doubt..." + 
-                $"{sadAnswers[index]}";
         }
     }
 }

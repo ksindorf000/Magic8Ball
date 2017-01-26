@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Magic8Ball
 {
-    class PlayGame
+    public class PlayGame
     {
         //Create EightBalls
         static RobotEightBall robot = new RobotEightBall();
@@ -42,8 +42,7 @@ namespace Magic8Ball
         ***************************************************/
         static string GetAnswer(IQuestionable EightBall)
         {
-            string answer = EightBall.Answer();
-            return answer;
+            return EightBall.Answer();
         }
     }
 }

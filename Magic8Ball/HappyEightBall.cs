@@ -40,7 +40,7 @@ namespace Magic8Ball
          *      Adds 3 negative, 3 positive, and 
          *      3 neutral answers to a list
         ******************************************/
-        private void GenerateAnswers()
+        public static void GenerateAnswers()
         {
             //Add negative responses
             happyAnswers.Add("Sorry, I don't think so. " +

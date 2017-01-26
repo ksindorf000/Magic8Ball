@@ -13,6 +13,10 @@ namespace Magic8Ball
         ******************************************/
         static void Main(string[] args)
         {
+            RobotEightBall.GenerateAnswers();
+            HappyEightBall.GenerateAnswers();
+            SadEightBall.GenerateAnswers();
+            
             string question;
             bool askAgain = true;
            

@@ -26,8 +26,6 @@ namespace Magic8Ball
         *********************************************/
         public string ShowAnswer()
         {
-            GenerateAnswers();
-
             Random rng = new Random();
             int index = rng.Next(robotAnswers.Count());
 
@@ -40,7 +38,7 @@ namespace Magic8Ball
          *      Adds 3 negative, 3 positive, and 
          *      3 neutral answers to a list
         ******************************************/
-        private void GenerateAnswers()
+        public static void GenerateAnswers()
         {
             //Add negative responses
             robotAnswers.Add("Negative.");
